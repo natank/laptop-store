@@ -1,0 +1,33 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width,initial-scale=1')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    link(href='https://fonts.googleapis.com/css?family=Bungee+Inline|Nunito+Sans', rel='stylesheet')
+    title The Laptop Store!
+    script(type='text/javascript', src='/main.js')
+  body
+    .container
+      h1 The Laptop Store!
+      .cards-container
+      
+        - for(var x=0; x<props.length; x++){        
+          figure.card
+            .card__hero
+              img.card__img(src='images/'+props[x].image, alt='')
+            h2.card__name 
+              =props[x].productName
+            p.card__detail
+              span.emoji-left 🖥
+               =props[x].screen
+            p.card__detail
+              span.emoji-left 🧮
+               =props[x].cpu
+            .card__footer
+              p.card__price 
+                =props[x].price
+              a.card__link(href='/laptop/'+props[x].id)
+                | Check it out
+                span.emoji-right 👉
+        - }

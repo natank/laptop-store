@@ -1,0 +1,44 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width,initial-scale=1')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    link(href='https://fonts.googleapis.com/css?family=Bungee+Inline|Nunito+Sans', rel='stylesheet')
+    title 
+      = props.productName + '/// The Laptop Store!'
+    script(type='text/javascript', src='/main.js')
+  body
+    .container
+      h1 The Laptop Store!
+      figure.laptop
+        p.laptop__price $
+          =props.price
+        a.laptop__back(href='/')
+          span.emoji-left 👈
+          | Back
+        .laptop__hero
+          img.laptop__img(src= '/images/'+props.image, alt='')
+        h2.laptop__name 
+          = props.productName
+        .laptop__details
+          p
+            span.emoji-left 🖥
+              = props.screen
+          p
+            span.emoji-left 🧮
+              = props.cpu
+          p
+            span.emoji-left 💾
+              = props.storage + 'of storage'
+          p
+            span.emoji-left 📦
+              = props.ram + 'of RAM'
+        p.laptop__description 
+          =props.description
+        p.laptop__source
+          | Source:
+          a(href='https://www.techradar.com/news/mobile-computing/laptops/best-laptops-1304361', target='_blank') https://www.techradar.com/news/mobile-computing/laptops/best-laptops-1304361
+        a.laptop__link(href='#')
+          = 'Buy now for $' +props.price
+          span.emoji-right 🥳 😍
